@@ -25,6 +25,8 @@ class HomeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            travelViewModel._columnIndex.value = 0
+            travelViewModel._sort.value = 0
             HRComposeAppTheme {
                 AppMainScreen(categoryViewModel, travelViewModel, jsonViewModel)
             }

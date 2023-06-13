@@ -231,6 +231,7 @@ fun AddEditTravelScreen(
                             .padding(all = 10.dp)
                             .fillMaxWidth(),
                         labelResId = R.string.travel_category,
+//                        readOnly = isEdit,
                         inputWrapper = category,
                         keyboardOptions = KeyboardOptions(
                             capitalization = KeyboardCapitalization.None,
@@ -385,7 +386,7 @@ suspend fun addTravelInDB(
     navController.popBackStack()
 }
 
-fun updateTravelInDB(
+suspend fun updateTravelInDB(
     context: Context,
     navController: NavHostController,
     Travel: Travel,
@@ -393,6 +394,7 @@ fun updateTravelInDB(
     jsonViewModel: JSONViewModel,
 ) {
     TravelViewModel.updateTravelDetails(Travel)
+    jsonViewModel.updateTravel(Travel)
     navController.popBackStack()
     Log.d("updateTravelInDB", Travel.toString())
 }

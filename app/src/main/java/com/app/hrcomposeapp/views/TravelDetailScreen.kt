@@ -104,7 +104,7 @@ fun TravelDetailScreen(
                                 onClick = {
                                     travelViewModel.deleteTravel(selectedTravel)
                                     coroutineScope.launch {
-//                                        jsonViewModel.deleteTravel(selectedTravel)
+                                        jsonViewModel.deleteTravel(selectedTravel)
                                     }
                                     navController.popBackStack()
                                 }, modifier = Modifier.weight(1f)
